@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-red: #9b1c24;
+  --color-brand-deep: #5e0f16;
+  --color-brand-soft: #f6e3e3;
+  --color-page: #faf6f1;
+  --color-surface: #ffffff;
+  --color-gold: #c9a24b;
+  --color-ink: #2b1a1a;
+  --color-muted: #7a6767;
+
+  --color-cream: var(--color-page);
+  --color-coffee-50: var(--color-page);
+  --color-coffee-100: var(--color-brand-soft);
+  --color-coffee-200: color-mix(in srgb, var(--color-gold) 35%, white);
+  --color-coffee-400: var(--color-muted);
+  --color-coffee-500: var(--color-muted);
+  --color-coffee-600: var(--color-muted);
+  --color-coffee-700: var(--color-brand-red);
+  --color-coffee-800: var(--color-brand-red);
+  --color-coffee-900: var(--color-ink);
+  --color-coffee-950: var(--color-brand-deep);
+
+  --color-orange-50: var(--color-brand-soft);
+  --color-orange-100: var(--color-brand-soft);
+  --color-orange-200: var(--color-gold);
+  --color-orange-400: var(--color-gold);
+  --color-orange-600: var(--color-brand-red);
+  --color-orange-700: var(--color-brand-red);
+  --color-orange-800: var(--color-brand-deep);
+  --color-orange-900: var(--color-ink);
+
+  --color-red-50: var(--color-brand-soft);
+  --color-red-100: var(--color-brand-soft);
+  --color-red-200: var(--color-gold);
+  --color-red-600: var(--color-brand-red);
+  --color-red-700: var(--color-brand-red);
+  --color-red-800: var(--color-brand-deep);
+
+  --font-sans: var(--font-inter), Arial, Helvetica, sans-serif;
+  --font-serif: var(--font-playfair), Georgia, serif;
+  --radius-3xl: 1.25rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--color-page);
+  color: var(--color-ink);
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-playfair), Georgia, serif;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.page-shell {
+  width: min(100% - 2rem, 1440px);
+  margin-inline: auto;
+}
+
+.field {
+  width: 100%;
+  border: 1px solid color-mix(in srgb, var(--color-gold) 45%, white);
+  border-radius: 0.875rem;
+  background: var(--color-surface);
+  padding: 0.75rem 0.875rem;
+  color: var(--color-ink);
+  outline: none;
+  transition: border-color 150ms, box-shadow 150ms;
+}
+
+.field:focus {
+  border-color: var(--color-brand-red);
+  box-shadow: 0 0 0 3px rgb(155 28 36 / 14%);
+}
+
+.button-primary,
+.button-secondary {
+  border-radius: 0.875rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  transition: background-color 150ms, color 150ms, border-color 150ms;
+}
+
+.button-primary {
+  background: var(--color-brand-red);
+  color: var(--color-surface);
+}
+
+.button-primary:hover {
+  background: var(--color-brand-deep);
+}
+
+.button-primary:disabled {
+  cursor: not-allowed;
+  background: #e7d8d1;
+  color: var(--color-muted);
+}
+
+.button-secondary {
+  border: 1px solid var(--color-brand-red);
+  background: var(--color-surface);
+  color: var(--color-brand-red);
+}
+
+.button-secondary:hover {
+  background: var(--color-brand-soft);
+}
